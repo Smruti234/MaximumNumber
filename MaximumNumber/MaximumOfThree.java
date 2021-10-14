@@ -2,8 +2,8 @@ package MaximumNumber;
 
 public class MaximumOfThree {
 		
-		public static Integer maxOfThree(Integer x, Integer y, Integer z) {
-			Integer max = x;
+		public static Float maxOfThree(Float x, Float y,Float z) {
+			Float max = x;
 			if (y.compareTo(max) > 0)
 				max = y;
 			if (z.compareTo(max) > 0)
@@ -12,8 +12,8 @@ public class MaximumOfThree {
 		}
 
 		public static void main(String[] args) {
-			Integer maximum = MaximumOfThree.maxOfThree(34, 36, 38);
-			System.out.println("Maximum of three numbers is :" + maximum);
+			Float maximum = MaximumOfThree.maxOfThree(34.0f, 36.5f, 38.8f);
+			System.out.println("Maximum  three numbers is :" + maximum );
 		}
 }
 	
