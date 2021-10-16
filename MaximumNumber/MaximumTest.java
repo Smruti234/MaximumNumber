@@ -1,36 +1,31 @@
 package MaximumNumber;
 public class MaximumTest<E extends Comparable<E>> {
-	E x, y, z;
+	E[] value;
 
-	public MaximumTest(E a, E b, E c) {
-		this.x = a;
-		this.y = b;
-		this.z = c;
+	public MaximumTest(E[] value) {
+		this.value = value;
 	}
 
 	public E maximum() {
-		return MaximumTest.maximum(x,y,z);
+		return MaximumTest.maximum(value);
 	}
 
-	public static <Refactor extends Comparable<Refactor>> Refactor maximum(Refactor a, Refactor b, Refactor c) {
-		Refactor maximum = a;
-		if (b.compareTo(maximum) > 0)
-			maximum = b;
-		if (c.compareTo(maximum) > 0)
-			maximum = c;
-		return maximum;
-
+	public static <E extends Comparable<E>> E maximum(E[] value) {
+		for (int i = 0; i < value.length; i++) {
+			for (int K = i; K < value.length; K++) {
+				if (value[i].compareTo(value[K]) < 0) {
+					value[i] = value[K];
+				}
+			}
+		}
+		return value[0];
 	}
 
 	public static void main(String[] args) {
-		int aint = 45;
-		int bint = 67;
-		int cint = 34;
-		new MaximumTest(aint, bint, cint).maximum();
-		System.out.println("Print Maximum Number is :" + " " + new MaximumTest(aint, bint, cint).maximum());
+		String[] multiString = { "Ant","Catfish","Elephant","molly" };
+		System.out.println("The Maximum value is :" + " " + new MaximumTest<String>(multiString).maximum());
 
 	}
 
 }
-
  
